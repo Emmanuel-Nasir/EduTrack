@@ -14,89 +14,7 @@ A multi-school, cloud-powered grade tracking web app built with vanilla JavaScri
 - 🎨 **Theme system** — Light/dark mode + 5 accent colors (saved per device)
 - ☁️ **Real-time Firestore** — All data lives in the cloud
 
----
 
-## Project Structure
-
-```
-edutrack/
-├── index.html        ← Landing page + school registration
-├── login.html        ← Login page
-├── signup.html       ← Teacher sign-up page
-├── admin.html        ← Admin dashboard
-├── teacher.html      ← Teacher dashboard
-├── css/
-│   └── style.css     ← Global styles + theme system
-└── js/
-    ├── firebase.js   ← Firebase init + helpers (⚠ add your config here)
-    ├── auth.js       ← Login / logout / session guard
-    ├── school.js     ← School data helpers
-    └── teacher.js    ← (teacher logic is inline in teacher.html)
-```
-
----
-
-## Firebase Setup (Step-by-Step)
-
-### Step 1 — Create Firebase Project
-1. Go to https://console.firebase.google.com
-2. Click **"Add project"** → Name it `EduTrack` → Click **Create**
-
-### Step 2 — Enable Firestore
-1. Sidebar → **Build → Firestore Database**
-2. Click **"Create database"** → **"Start in test mode"** → Choose a region → **Enable**
-
-### Step 3 — Enable Authentication
-1. Sidebar → **Build → Authentication** → **"Get Started"**
-2. Under **Sign-in method** → Enable **Email/Password**
-
-### Step 4 — Get Your Config
-1. Click the ⚙️ gear icon → **Project Settings** → **General**
-2. Scroll to **"Your apps"** → Click **`</>`** (web)
-3. Register app name as `EduTrack Web` → Copy the `firebaseConfig` object
-
-### Step 5 — Add Config to Project
-Open `js/firebase.js` and replace the placeholder config:
-
-```javascript
-const firebaseConfig = {
-  apiKey: "YOUR_API_KEY",
-  authDomain: "YOUR_PROJECT_ID.firebaseapp.com",
-  projectId: "YOUR_PROJECT_ID",
-  storageBucket: "YOUR_PROJECT_ID.appspot.com",
-  messagingSenderId: "YOUR_MESSAGING_SENDER_ID",
-  appId: "YOUR_APP_ID"
-};
-```
-
-### Step 6 — Set Firestore Security Rules
-In Firebase Console → **Firestore → Rules** tab, replace the default rules
-```
-
-Click **Publish**.
-
-### Step 7 — Serve the App
-
-Because Firebase uses ES modules (`import/export`), you need a local server. Options:
-
-**Option A — VS Code Live Server** (easiest)
-- Install the "Live Server" extension in VS Code
-- Right-click `index.html` → **Open with Live Server**
-
-**Option B — Node.js serve**
-```bash
-npm install -g serve
-serve .
-```
-
-**Option C — Python**
-```bash
-python3 -m http.server 8080
-```
-
-Then open: `http://localhost:8080`
-
----
 
 ## How to Use
 
@@ -126,25 +44,7 @@ Then open: `http://localhost:8080`
 - Go to **Reports** → Select a student
 - See overall average, per-subject breakdown, term-by-term grades
 
----
 
-## Firestore Data Structure
-
-```
-/schools/{schoolId}
-  name, address, state, country, phone, gradingScale[], createdAt
-
-/schools/{schoolId}/users/{userId}
-  name, email, role (admin|teacher), schoolId, createdAt
-
-/schools/{schoolId}/students/{studentId}
-  name, studentId, class, createdAt
-
-/schools/{schoolId}/grades/{gradeId}
-  studentId, subject, score, term, createdAt
-```
-
----
 
 ## Customization
 
@@ -193,3 +93,32 @@ firebase deploy
 Emmanuel Oluwamayowa Nasir  
 CSE 310 — Applied Programming, Module 3: Cloud Databases  
 Date: 2026
+
+[Software Demo Video](https://youtu.be/ERYahKWEeU8)
+
+# Development Environment
+
+- **IDE:** Visual Studio Code
+- **Runtime:** Node.js
+- **Version Control:** Git / GitHub
+
+The project is written in **JavaScript** using **Node.js**. It utilizes built-in
+Node modules such as `fs` for file handling, `path` for file paths, and
+`readline` for user interaction in the command-line interface.
+
+Additionally, external libraries such as `chalk` (for styling terminal output)
+may be used to improve user experience.
+
+# Useful Websites
+
+- [Node.js Documentation](https://nodejs.org/en/docs)
+- [MDN JavaScript Guide](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [W3Schools JavaScript Tutorial](https://www.w3schools.com/js/)
+- [Stack Overflow](https://stackoverflow.com/questions/tagged/javascript)
+
+# Future Work
+
+- Add teachers planner
+- Display charts and visual summaries of best performing students and least performing students
+- Build a web-based teachers' lesson plans
+- Add more security layer
