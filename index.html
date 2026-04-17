@@ -23,7 +23,7 @@
       display: flex; align-items: center; justify-content: center;
       font-size: 0.75rem;
       font-weight: 600;
-      color: var(--text-muted);
+      color: var(--text-secondary);
       transition: all 0.2s;
     }
     .step-dot.active { background: var(--accent); border-color: var(--accent); color: #fff; }
@@ -120,38 +120,41 @@
 </section>
 
 <!-- ── Features ───────────────────────────────────────────── -->
-<div class="features-grid">
-  <div class="feature-card">
-    <div class="feature-icon">🏫</div>
-    <h3>Multi-School Support</h3>
-    <p style="color: var(--text-primary); font-weight: 500;">Register multiple schools, each fully isolated with their own data, teachers, and students.</p>
+<section class="features-section">
+  <h2 style="text-align: center; margin-bottom: 2rem;">Key Features</h2>
+  <div class="features-grid">
+    <div class="feature-card">
+      <div class="feature-icon">🏫</div>
+      <h3>Multi-School Support</h3>
+      <p style="color: var(--text-primary); font-weight: 500;">Register multiple schools, each fully isolated with their own data, teachers, and students.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📊</div>
+      <h3>Custom Grading Scales</h3>
+      <p style="color: var(--text-primary); font-weight: 500;">Admins can define their own grading system — A, B, C, D, F with custom score ranges.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">👩‍🏫</div>
+      <h3>Teacher Management</h3>
+      <p style="color: var(--text-primary); font-weight: 500;">Invite teachers, assign roles, and manage access — all from a clean admin dashboard.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">📱</div>
+      <h3>Mobile Friendly</h3>
+      <p style="color: var(--text-primary); font-weight: 500;">Works perfectly on phones, tablets, and desktops. Grade on the go.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">☁️</div>
+      <h3>Cloud Powered</h3>
+      <p style="color: var(--text-primary); font-weight: 500;">All data stored in Firebase Firestore — real-time, secure, and always backed up.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎨</div>
+      <h3>Light & Dark Mode</h3>
+      <p style="color: var(--text-primary); font-weight: 500;">Choose your preferred theme and accent color for a personalized experience.</p>
+    </div>
   </div>
-  <div class="feature-card">
-    <div class="feature-icon">📊</div>
-    <h3>Custom Grading Scales</h3>
-    <p style="color: var(--text-primary); font-weight: 500;">Admins can define their own grading system — A, B, C, D, F with custom score ranges.</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">👩‍🏫</div>
-    <h3>Teacher Management</h3>
-    <p style="color: var(--text-primary); font-weight: 500;">Invite teachers, assign roles, and manage access — all from a clean admin dashboard.</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">📱</div>
-    <h3>Mobile Friendly</h3>
-    <p style="color: var(--text-primary); font-weight: 500;">Works perfectly on phones, tablets, and desktops. Grade on the go.</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">☁️</div>
-    <h3>Cloud Powered</h3>
-    <p style="color: var(--text-primary); font-weight: 500;">All data stored in Firebase Firestore — real-time, secure, and always backed up.</p>
-  </div>
-  <div class="feature-card">
-    <div class="feature-icon">🎨</div>
-    <h3>Light & Dark Mode</h3>
-    <p style="color: var(--text-primary); font-weight: 500;">Choose your preferred theme and accent color for a personalized experience.</p>
-  </div>
-</div>
+</section>
 
 <!-- ── How It Works ───────────────────────────────────────── -->
 <section class="steps-section">
@@ -230,9 +233,9 @@
 
     <div style="margin-bottom:0.5rem;">
       <div style="display:grid; grid-template-columns:60px 1fr 1fr 36px; gap:0.5rem; margin-bottom:0.4rem;">
-        <span style="font-size:0.72rem; font-weight:600; color:var(--text-muted); text-transform:uppercase;">Grade</span>
-        <span style="font-size:0.72rem; font-weight:600; color:var(--text-muted); text-transform:uppercase;">Min Score</span>
-        <span style="font-size:0.72rem; font-weight:600; color:var(--text-muted); text-transform:uppercase;">Max Score</span>
+        <span style="font-size:0.72rem; font-weight:600; color:var(--text-secondary); text-transform:uppercase;">Grade</span>
+        <span style="font-size:0.72rem; font-weight:600; color:var(--text-secondary); text-transform:uppercase;">Min Score</span>
+        <span style="font-size:0.72rem; font-weight:600; color:var(--text-secondary); text-transform:uppercase;">Max Score</span>
         <span></span>
       </div>
       <div id="grading-rows"></div>
@@ -271,7 +274,7 @@
         Register School 🎓
       </button>
     </div>
-    <p style="font-size:0.8rem; text-align:center; margin-top:1rem; color:var(--text-muted);">
+    <p style="font-size:0.8rem; text-align:center; margin-top:1rem; color:var(--text-secondary);">
       Already registered? <a href="login.html">Log in here</a>
     </p>
   </div>
