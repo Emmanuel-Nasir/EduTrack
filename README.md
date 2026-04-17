@@ -1,4 +1,4 @@
-# EduTrack — School Grade Management System
+# GradeMinx — School Grade Management System
 
 A multi-school, cloud-powered grade tracking web app built with vanilla JavaScript, HTML, CSS, and **Firebase Firestore + Authentication**.
 

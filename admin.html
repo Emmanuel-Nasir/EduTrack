@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="EduTrack Admin Dashboard. Manage schools, teachers, and student records. Oversee your institution's grade management and academic operations." />
-  <title>EduTrack — Admin Dashboard</title>
+  <meta name="description" content="GradeMinx Admin Dashboard. Manage schools, teachers, and student records. Oversee your institution's grade management and academic operations." />
+  <title>GradeMinx — Admin Dashboard</title>
   <link rel="stylesheet" href="css/style.css" />
   <style>
     .grade-edit-row {
@@ -61,7 +61,7 @@
     <div class="sidebar-logo">
       <div class="logo-icon">🎓</div>
       <div>
-        <h1>EduTrack</h1>
+        <h1>GradeMinx</h1>
         <span id="schoolNameLabel">Loading...</span>
       </div>
     </div>
@@ -346,7 +346,7 @@
       <!-- ── APPEARANCE ──────────────────────────────────── -->
       <section id="section-theme" style="display:none;">
         <div class="page-header">
-          <div><h2>Appearance</h2><p>Customize your EduTrack experience.</p></div>
+          <div><h2>Appearance</h2><p>Customize your GradeMinx experience.</p></div>
         </div>
 
         <div class="card" style="max-width:400px;">
@@ -453,9 +453,10 @@
 
       document.getElementById('schoolNameLabel').textContent = schoolData.name;
       document.getElementById('welcomeSub').textContent = `Overview for ${schoolData.name}`;
-      document.getElementById('statCode').textContent = schoolId.slice(0, 8).toUpperCase();
-      document.getElementById('schoolCodeInline').textContent = schoolId.slice(0, 8).toUpperCase();
-      document.getElementById('schoolCodeText').textContent = schoolId.slice(0, 8).toUpperCase();
+      const displayCode = schoolData.code || schoolId.slice(0, 8).toUpperCase();
+      document.getElementById('statCode').textContent = displayCode;
+      document.getElementById('schoolCodeInline').textContent = displayCode;
+      document.getElementById('schoolCodeText').textContent = displayCode;
 
       // Prefill school edit form
       document.getElementById('editSchoolName').value    = schoolData.name || '';
@@ -708,7 +709,8 @@
 
   // ── Copy Code ──────────────────────────────────────────────
   window.copyCode = function() {
-    navigator.clipboard.writeText(schoolId.slice(0, 8).toUpperCase());
+    const code = schoolData.code || schoolId.slice(0, 8).toUpperCase();
+    navigator.clipboard.writeText(code);
     showToast('School code copied!');
   };
 
